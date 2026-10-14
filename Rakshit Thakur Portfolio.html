@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rakshit Thakur | ML Engineer & Filmmaker</title>
+<meta name="description" content="Portfolio of Rakshit Thakur: machine learning, applied AI, and filmmaking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#eef1f3; --surface:#ffffff; --ink:#12202a; --muted:#4d5d69; --line:#c9d2d8;
+  --accent:#9a5b00; --frame:#12202a; --frame-ink:#f3efe6; --frame-accent:#f2b84b;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e171d; --surface:#15222b; --ink:#e8edf0; --muted:#9db0bc; --line:#2a3b46;
+    --accent:#f2b84b; --frame:#050a0d; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e171d; --surface:#15222b; --ink:#e8edf0; --muted:#9db0bc; --line:#2a3b46;
+  --accent:#f2b84b; --frame:#050a0d; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.65 var(--body)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;font:500 .95rem var(--display)}
+nav .links{display:flex;gap:1.25rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* hero: widescreen frame */
+.frame{background:var(--frame);color:var(--frame-ink);border-radius:6px;overflow:hidden;position:relative}
+.frame .bar{height:clamp(1.5rem,5vw,3.5rem);background:#000;transition:height 1.2s .3s cubic-bezier(.7,0,.2,1)}
+.frame.open .bar{height:.75rem}
+.hero-in{padding:clamp(2rem,6vw,4.5rem) clamp(1.25rem,5vw,4rem)}
+.hero-in p.role{margin:0 0 1rem;font:500 1rem var(--display);color:var(--frame-accent)}
+h1{margin:0;font:800 clamp(2.8rem,10vw,7rem)/.92 var(--display);letter-spacing:-.03em}
+.hero-in .pitch{max-width:34rem;margin:1.5rem 0 0;font-size:clamp(1.15rem,2.4vw,1.4rem);color:#d9d4c8}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:4px;font:500 1rem var(--display);text-decoration:none;border:1.5px solid var(--frame-accent)}
+.btn.fill{background:var(--frame-accent);color:#1a1405}
+.btn.out{color:var(--frame-ink)}
+.btn:hover{filter:brightness(1.1)}
+
+section{padding:clamp(3rem,7vw,5.5rem) 0 0}
+h2{margin:0 0 1.5rem;font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--display);letter-spacing:-.02em}
+h3{margin:0;font:700 1.35rem/1.25 var(--display)}
+.meta{margin:.25rem 0 0;color:var(--muted);font-size:1rem}
+.lede{max-width:44rem;font-size:1.25rem}
+
+/* experience */
+.job{border-left:3px solid var(--accent);padding:.25rem 0 .25rem 1.25rem;max-width:46rem}
+.job ul{margin:.75rem 0 0;padding-left:1.1rem}
+li{margin:.3rem 0}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.card p{margin:0}
+.tag{align-self:flex-start;font:500 .85rem var(--display);padding:.15rem .6rem;border:1px solid var(--accent);color:var(--accent);border-radius:99px}
+.card .go{margin-top:auto;padding-top:.5rem;font:500 1rem var(--display);color:var(--accent);text-decoration:underline;text-underline-offset:4px}
+
+/* creative band */
+.band{background:var(--frame);color:var(--frame-ink);border-radius:6px;padding:clamp(1.5rem,5vw,3.5rem);display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr))}
+.band h3{color:var(--frame-accent)}
+.band p{color:#d9d4c8;margin:.5rem 0 0}
+.band a{display:inline-block;margin-top:1rem;color:var(--frame-accent);font:500 1rem var(--display);text-underline-offset:4px}
+.stat{font:800 4rem/1 var(--display);color:var(--frame-ink)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1.5rem 2rem}
+.skills h3{font-size:1.1rem}
+.skills p{margin:.25rem 0 0;color:var(--muted)}
+
+/* contact */
+.contact{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;font-size:1.2rem}
+.contact a{text-underline-offset:4px}
+footer{padding:4rem 0 2.5rem;color:var(--muted);font-size:.95rem}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .frame .bar{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Primary">
+    <strong>Rakshit Thakur</strong>
+    <div class="links">
+      <a href="#work">Projects</a>
+      <a href="#creative">Filmmaking</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="frame" id="top">
+    <div class="bar"></div>
+    <div class="hero-in">
+      <p class="role">Machine learning &amp; applied AI</p>
+      <h1>Rakshit<br>Thakur</h1>
+      <p class="pitch">Final-year B.Tech student who builds ML models, and directs short films. I care about how things work and how they feel.</p>
+      <div class="cta">
+        <a class="btn fill" href="#work">See my projects</a>
+        <a class="btn out" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="bar"></div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">I'm a Computer Science and Engineering student at Jagran Lakecity University, Bhopal, now in my 7th semester. My work covers machine learning, optimization, and prompt engineering for LLM-based tools. Outside the lab I write, shoot, and edit my own films, which taught me to structure ideas clearly and pay attention to detail.</p>
+  </section>
+
+  <section id="work">
+    <h2>Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Hackathon, 2nd place</span>
+        <h3>Green Wave Optimization for Urban Traffic</h3>
+        <p class="meta">Career College, Bhopal</p>
+        <p>An optimization-based approach to synchronize traffic signals along urban corridors, reducing simulated stop-and-go delays. Placed second for its practical take on city traffic management.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Machine learning</span>
+        <h3>ML-Based Movie Recommendation System</h3>
+        <p class="meta">End-to-end pipeline</p>
+        <p>A model that recommends movies from user preferences and similarity patterns. I handled data preparation, model building, evaluation, and output generation.</p>
+        <a class="go" href="https://github.com/Rt1575/RakshitThakur_2023BTCSE013_movie-recommendation-system-ml" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="creative">
+    <h2>Filmmaking and content</h2>
+    <div class="band">
+      <div>
+        <h3>The Suspense Point</h3>
+        <p>A YouTube channel I founded for suspense-driven storytelling. I run it end to end: planning, production, and editing.</p>
+        <a href="https://www.youtube.com/@TheSuspensePoint" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+      </div>
+      <div>
+        <div class="stat" aria-hidden="true">4</div>
+        <h3>Short films directed</h3>
+        <p>I wrote, shot, and edited each one myself, building a practical sense of composition, pacing, and narrative structure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="job">
+      <h3>AI Intern, Prime Focus Technologies</h3>
+      <p class="meta">2-month internship</p>
+      <ul>
+        <li>Worked in a technical team on AI-based solutions, contributing to model development, testing, and applied problem-solving.</li>
+        <li>Gained hands-on exposure to production-oriented AI workflows and cross-team collaboration.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Machine learning and AI</h3><p>Recommendation systems, optimization models, applied AI problem-solving</p></div>
+      <div><h3>Prompt engineering</h3><p>Structured prompt design and iteration for LLM-based tools and workflows</p></div>
+      <div><h3>Data and analysis</h3><p>Data-driven model building and evaluation for real-world use cases</p></div>
+      <div><h3>Creative and design</h3><p>Visual storytelling, content structuring, video editing, end-to-end production</p></div>
+      <div><h3>Working style</h3><p>Problem-solving, project ownership, cross-functional collaboration</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="lede">Open to internships and roles in machine learning, applied AI, and creative-technical work.</p>
+    <div class="contact">
+      <a href="mailto:rakshitthakur2005@gmail.com">rakshitthakur2005@gmail.com</a>
+      <a href="tel:+917909325207">+91 79093 25207</a>
+      <span>Bhopal, Madhya Pradesh, India</span>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Rakshit Thakur</footer>
+</div>
+<script>
+requestAnimationFrame(function(){document.getElementById('top').classList.add('open');});
+</script>
+</body>
+</html>
